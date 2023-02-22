@@ -65,4 +65,5 @@ while true do
 	wait(0.1)
 	Part0.Position = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Part0.Position.Z - 5)
 	end
-	end
+end
+return library;
