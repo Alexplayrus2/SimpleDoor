@@ -68,7 +68,7 @@ while true do
 	end
 end
 
-function createhopperbin(name)
+function library:createhopperbin(name)
 	local tool = Instance.new("Tool")
 	tool.Name = name
 	tool.Parent=game.Players.LocalPlayer.Backpack
