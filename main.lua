@@ -44,6 +44,7 @@ local Noise = Instance.new("Sound")
 Noise.Parent = Part0
 Noise.SoundId = audioid
 Noise.Volume = 10
+Noise.Looped = true
 Noise:Play()
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = workspace
