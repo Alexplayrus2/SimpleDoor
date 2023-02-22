@@ -67,11 +67,4 @@ while true do
 	Part0.Position = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Part0.Position.Z - 5)
 	end
 end
-
-function library:createhopperbin(name)
-	local tool = Instance.new("Tool")
-	tool.Name = name
-	tool.Parent=game.Players.LocalPlayer.Backpack
-	return tool;
-end
 return library;
