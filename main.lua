@@ -151,5 +151,19 @@ while true do
 	Part0.Position = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Part0.Position.Z - 5)
 	end
 end
+function library:jumpscare(decalid, audioid)
+	local sound = Instance.new("Sound")
+    sound.SoundId = audioid
+    sound.Volume = 10
+    sound.Parent = workspace
+    local jumpscareframe = mainhud.jumpscare
+    local jumpscareimg = mainhud.jumpscare.jumpscareimg
+    jumpscareimg.Image = decalid
+    jumpscareframe.Visible = true
+    sound:Play()
+    wait(0.2)
+    jumpscareframe.Visible=false
+    sound:Stop()
+end
 createhud()
 return library;
