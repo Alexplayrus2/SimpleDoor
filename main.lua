@@ -165,5 +165,18 @@ function library:jumpscare(decalid, audioid)
     jumpscareframe.Visible=false
     sound:Stop()
 end
+function library:flickerlights()
+    local jumpscareframe = mainhud.jumpscare
+    local jumpscareimg = mainhud.jumpscare.jumpscareimg
+    jumpscareimg.Visible = false
+    jumpscareframe.Visible = true
+    wait(0.1)
+    jumpscareframe.Visible = false
+    wait(0.1)
+    jumpscareframe.Visible = true
+    wait(0.1)
+    jumpscareframe.Visible = false
+    jumpscareimg.Visible = true
+end
 createhud()
 return library;
