@@ -1,3 +1,73 @@
+library = {}
+
+function createhud()
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+local ScreenGui0 = Instance.new("ScreenGui")
+mainhud = ScreenGui0
+local TextLabel1 = Instance.new("TextLabel")
+local Frame2 = Instance.new("Frame")
+local ImageLabel3 = Instance.new("ImageLabel")
+ScreenGui0.Name = "SimpleDoorHUD"
+ScreenGui0.Parent = mas
+ScreenGui0.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextLabel1.Name = "watermark"
+TextLabel1.Parent = ScreenGui0
+TextLabel1.Position = UDim2.new(0.645390034, 0, 0.888888955, 0)
+TextLabel1.Size = UDim2.new(0, 200, 0, 50)
+TextLabel1.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel1.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel1.BackgroundTransparency = 1
+TextLabel1.Font = Enum.Font.SourceSans
+TextLabel1.FontSize = Enum.FontSize.Size14
+TextLabel1.Text = "Mod made with the SimpleDoor Modding Api"
+TextLabel1.TextColor = BrickColor.new("Institutional white")
+TextLabel1.TextColor3 = Color3.new(1, 1, 1)
+TextLabel1.TextScaled = true
+TextLabel1.TextSize = 14
+TextLabel1.TextWrap = true
+TextLabel1.TextWrapped = true
+Frame2.Name = "jumpscare"
+Frame2.Parent = ScreenGui0
+Frame2.Visible = false
+Frame2.Size = UDim2.new(1, 0, 1, 0)
+Frame2.BackgroundColor = BrickColor.new("Really black")
+Frame2.BackgroundColor3 = Color3.new(0, 0, 0)
+ImageLabel3.Name = "jumpscareimg"
+ImageLabel3.Parent = Frame2
+ImageLabel3.Position = UDim2.new(0.347517729, 0, 0.315555573, 0)
+ImageLabel3.Size = UDim2.new(0, 171, 0, 165)
+ImageLabel3.BackgroundColor = BrickColor.new("Institutional white")
+ImageLabel3.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel3.BackgroundTransparency = 1
+ImageLabel3.Image = "rbxassetid://11278229112"
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = game.CoreGui
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+end
+
 function library:createrushent(decalid, audioid)
 --Converted with ttyyuu12345's model to script plugin v4
 function sandbox(var,func)
@@ -81,3 +151,32 @@ while true do
 	Part0.Position = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Part0.Position.Z - 5)
 	end
 end
+function library:jumpscare(decalid, audioid)
+	local sound = Instance.new("Sound")
+    sound.SoundId = audioid
+    sound.Volume = 10
+    sound.Parent = workspace
+    local jumpscareframe = mainhud.jumpscare
+    local jumpscareimg = mainhud.jumpscare.jumpscareimg
+    jumpscareimg.Image = decalid
+    jumpscareframe.Visible = true
+    sound:Play()
+    wait(0.2)
+    jumpscareframe.Visible=false
+    sound:Stop()
+end
+function library:flickerlights()
+    local jumpscareframe = mainhud.jumpscare
+    local jumpscareimg = mainhud.jumpscare.jumpscareimg
+    jumpscareimg.Visible = false
+    jumpscareframe.Visible = true
+    wait(0.1)
+    jumpscareframe.Visible = false
+    wait(0.1)
+    jumpscareframe.Visible = true
+    wait(0.1)
+    jumpscareframe.Visible = false
+    jumpscareimg.Visible = true
+end
+createhud()
+return library;
