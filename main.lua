@@ -135,7 +135,7 @@ Part0.Touched:Connect(function(part)
     sound.Parent = workspace
     local jumpscareframe = mainhud.jumpscare
     local jumpscareimg = mainhud.jumpscare.jumpscareimg
-    jumpscareimg.ImageId = decalid
+    jumpscareimg.Image = decalid
     jumpscareframe.Visible = true
     sound:Play()
     wait(0.2)
