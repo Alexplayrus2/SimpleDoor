@@ -197,7 +197,7 @@ function sandbox(var,func)
 end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
-Tool0 = Instance.new("Tool")
+local Tool0 = Instance.new("Tool")
 Part1 = Instance.new("Part")
 WeldConstraint2 = Instance.new("WeldConstraint")
 WeldConstraint3 = Instance.new("WeldConstraint")
