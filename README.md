@@ -21,3 +21,7 @@ api:flickerlights()
 ```lua
 api:givecrucifix()
 ```
+### Activate subtitles (gets the audio's name from the roblox library)
+```lua
+api:createsubtitles()
+```
