@@ -25,3 +25,10 @@ api:givecrucifix()
 ```lua
 api:createsubtitles()
 ```
+### Detect if the player entered a new room
+```lua
+function newroom()
+print("a new room has been created!")
+end
+api:onnewroom(newroom)
+```
