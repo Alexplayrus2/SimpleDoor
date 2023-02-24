@@ -34,4 +34,4 @@ api:onnewroom(newroom)
 ```
 ### Spawn a slower rush-like entity (useful for chase scenes)
 ```lua
-api:createchaseent(decal id *REQUIRED*, audio id ***REQUIRED*)
+api:createchaseent(decal id *REQUIRED*, audio id *REQUIRED*)
