@@ -426,5 +426,10 @@ game.DescendantAdded:Connect(function(desc)
 	end
 end)
   end
+function library:onnewroom(callback)
+workspace.CurrentRooms.ChildAdded:Connect(function()
+callback()
+end)
+end
 createhud()
 return library;
