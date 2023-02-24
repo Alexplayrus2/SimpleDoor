@@ -452,7 +452,7 @@ function library:createchaseent(decalid, audioid)
 	local Part0 = Instance.new("Part")
 	BillboardGui1 = Instance.new("BillboardGui")
 	ImageLabel2 = Instance.new("ImageLabel")
-	Part0.Name = "Entity"
+	Part0.Name = "Chaser"
 	Part0.Parent = mas
 	Part0.CFrame = CFrame.new(33.9514008, 4.52049637, -6.22570467, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 	Part0.Position = Vector3.new(33.95140075683594, 4.520496368408203, -6.225704669952393)
