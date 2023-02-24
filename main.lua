@@ -364,5 +364,67 @@ Tool0.Activated:Connect(function()
 	end
 end)
 end
+function library:createsubtitles()
+  
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+subtitlegui = Instance.new("ScreenGui")
+subtitles = Instance.new("TextLabel")
+subtitlegui.Name = "simpledoorsubtitles"
+subtitlegui.Parent = mas
+subtitlegui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+subtitles.Name = "subtitles"
+subtitles.Parent = subtitlegui
+subtitles.Position = UDim2.new(0.322695047, 0, 0.888888896, 0)
+subtitles.Size = UDim2.new(0, 200, 0, 50)
+subtitles.BackgroundColor = BrickColor.new("Institutional white")
+subtitles.BackgroundColor3 = Color3.new(1, 1, 1)
+subtitles.BackgroundTransparency = 1
+subtitles.Font = Enum.Font.SpecialElite
+subtitles.FontSize = Enum.FontSize.Size14
+subtitles.Text = ""
+subtitles.TextColor = BrickColor.new("Tr. Flu. Yellow")
+subtitles.TextColor3 = Color3.new(1, 0.909804, 0.454902)
+subtitles.TextScaled = true
+subtitles.TextSize = 14
+subtitles.TextWrap = true
+subtitles.TextWrapped = true
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = game.CoreGui
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+game.DescendantAdded:Connect(function(desc)
+	if desc:IsA("Sound") then
+		desc.Played:Connect(function()
+			local id = tonumber(desc.SoundId:match("%d+"))
+			local soundlol = game:GetService("MarketplaceService"):GetProductInfo(id)
+      if not string.find(soundlol.Name, "wood") and not string.find(soundlol.Name, "carpet") then
+			subtitles.Text = soundlol.Name
+      end
+		end)
+	end
+end)
+  end
 createhud()
 return library;
